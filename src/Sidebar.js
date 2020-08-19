@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Avatar } from "@material-ui/core";
-import  IconButton from "@material-ui/icons/IconButton"; 
-import DonutLargeIcon  from "@material-ui/icons/DonutLargeIcon"; 
-import  MoreVertIcon from "@material-ui/icons/MoreVertIcon";
-import  ChatIcon from "@material-ui/icons/ChatIcon";
-import  SearchOutlinedIcon from "@material-ui/icons/SearchOutlinedIcon";
+import { Avatar, IconButton } from "@material-ui/core";
+// import  ButtonIcon from "@material-ui/icons/Button"; 
+import DonutLargeIcon  from "@material-ui/icons/DonutLarge"; 
+import  MoreVertIcon from "@material-ui/icons/MoreVert";
+import  ChatIcon from "@material-ui/icons/Chat";
+import  SearchOutlined from "@material-ui/icons/SearchOutlined";
+
 
 import "./Sidebar.css";
 
@@ -23,20 +24,30 @@ function Sidebar(){
       <Avatar />
         
         <div className="sidebar__headerRight">
-          <DonutLargeIcon />
-          <ChatIcon />
-          <MoreVertIcon />
-          <p> ma tete </p>
+          <IconButton>
+            <DonutLargeIcon />
+          </IconButton>
+
+          <IconButton>
+            <ChatIcon />
+          </IconButton>
+
+          <IconButton> 
+            <MoreVertIcon />
+          </IconButton>
+          
         </div>
       </div>
     <div className="sidebar_search">
-   
+     
       <div className="sidebar_searchContainer">
+         <SearchOutlined />
+        <input placeholder="Fofo poe o texto aqui"/>
       </div>
     </div>
 
     <div className="sidebar_chats">
-    
+     
     </div>
 
     </div>
