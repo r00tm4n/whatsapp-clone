@@ -7,30 +7,32 @@ function SidebarChat({ addNewChat }) {
   const [seed, setSeed] = useState("");
 
   useEffect(() => {
-    setSeed(Math.floor(Math.random() * 500));
+    setSeed(Math.floor(Math.random() * 5000));
   }, []);
 
-  const addNewChat = () => {
+  const createChat = () => {
     const rooName = prompt("Please enter a new name for the chat");
 
     if (rooName) {
-
+          //do some romantic db stuff
     }
   };
 
   return !addNewChat ? (
 
     <div className="sidebarChat">
-        <Avatar src={`https://avatars.dicebear.com/human/${seed}.svg`}/>
+        <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`}/>
         <div className="sidebarChat_info">
-        <h2>Room name</h2>
-        <p>last message</p>
+          <h2>Room name</h2>
+          <p>last message</p>
         </div>
     </div>
   ): (
-    <div className="">
-
-    </div>
+    
+      <div onClick={createChat} className="siderbarChat">
+        <h2>Add new chat</h2>
+      </div>
+    
 
   );
 }
