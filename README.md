@@ -1,3 +1,3 @@
 # whatsapp-clone
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/whatsapp-clone)
+This is a Whatsapp Clone with Google Authentication
