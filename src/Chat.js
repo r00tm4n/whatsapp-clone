@@ -7,6 +7,7 @@ import  SearchOutlined from "@material-ui/icons/SearchOutlined";
 import AttachFileIcon from "@material-ui/icons/AttachFile";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import MicIcon from "@material-ui/icons/Mic";
+import {userParams} from "react-router-dom";
 
  /*{`chat_message ${true && "chat__receiver"}`}*/
 
@@ -15,16 +16,28 @@ import "./Chat.css"
 function Chat() {
   const [seed, setSeed] = useState("");
   const [input,setInput] = useState("");
+  const {roomId} = userParams();
+  const {roomName, setRoomName} = useState("");
+
+  useEffect( () => {
+    if(roomId){
+      db.collection("rooms").doc(roomId).onSnapshot(
+        snapshot => {
+          setRoomName(snapshot.data().name)
+        }
+      );
+    }
+  }, [roomId]);
+
+  useEffect(() => {
+    setSeed(Math.floor(Math.random() * 5000));
+  }, []);
 
   const sendMessage = (e) => {
     e.preventDefault();
     console.log("You typed ", input);
     setInput("");
   }
-
-  useEffect(() => {
-    setSeed(Math.floor(Math.random() * 5000));
-  }, []);
 
   return (
     <div className="chat">
