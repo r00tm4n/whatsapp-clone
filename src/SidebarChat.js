@@ -14,7 +14,9 @@ function SidebarChat({id, name, addNewChat }) {
     const rooName = prompt("Please enter a new name for the chat");
 
     if (rooName) {
-          //do some romantic db stuff
+          db.collection("rooms").add({
+            name: roomName,
+          });
     }
   };
 
