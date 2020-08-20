@@ -5,7 +5,7 @@ import DonutLargeIcon  from "@material-ui/icons/DonutLarge";
 import  MoreVertIcon from "@material-ui/icons/MoreVert";
 import  ChatIcon from "@material-ui/icons/Chat";
 import  SearchOutlined from "@material-ui/icons/SearchOutlined";
-import db from "./firebase.js"
+import db from "./firebase"
 
 import SidebarChat from "./SidebarChat.js";
 
