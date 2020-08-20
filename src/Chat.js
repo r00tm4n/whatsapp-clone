@@ -8,6 +8,7 @@ import AttachFileIcon from "@material-ui/icons/AttachFile";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import MicIcon from "@material-ui/icons/Mic";
 import {userParams} from "react-router-dom";
+import db from './firebase';
 
  /*{`chat_message ${true && "chat__receiver"}`}*/
 
@@ -22,8 +23,8 @@ function Chat() {
   useEffect( () => {
     if(roomId){
       db.collection("rooms").doc(roomId).onSnapshot(
-        snapshot => {
-          setRoomName(snapshot.data().name)
+        (snapshot) => {
+          setRoomName(snapshot.data().name);
         }
       );
     }
